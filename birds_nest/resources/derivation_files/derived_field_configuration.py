@@ -22,22 +22,22 @@ class INSTRMNT_RL(models.Model):
 		# "34":"Balance_sheet_recognised_financial_asset_instrument_according_to_national_general_accepted_accounting_principles_nGAAP",
 		# "35":"Balance_sheet_recognised_financial_asset_instrument_according_to_International_Financial_Reporting_Standard_IFRS",
 
-        if (self.TYP_INSTRMNT_RL == '10') or \
-            (self.TYP_INSTRMNT_RL == '34') or \
-            (self.TYP_INSTRMNT_RL == '35'):
+        if (self.INSTRMNT_RL_TYP == '10') or \
+            (self.INSTRMNT_RL_TYP == '34') or \
+            (self.INSTRMNT_RL_TYP == '35'):
             accntng_clssfctn = self.ACCNTNG_CLSSFCTN
             accmltd_imprmnt = self.ACCMLTD_IMPRMNT
             crryng_amnt  = self.CRRYNG_AMNT
             imprmnt_stts = self.IMPRMNT_STTS
 	 			
-	 	# for some reason 	BLNC_SHT_RCGNSD_FNCL_ASST_INSTRMNT_FR_VL_TYP is a boolean, 
+	 	# for some reason 	BLNC_SHT_RCGNSD_FNNCL_ASST_INSTRMNT_FR_VL_TYP is a boolean, 
 		# and we would expect it to be a domain with 2 members, need to investigate this.
 		# 	
-        if (self.BLNC_SHT_RCGNSD_FNCL_ASST_INSTRMNT_FR_VL_TYP):
+        if (self.BLNC_SHT_RCGNSD_FNNCL_ASST_INSTRMNT_FR_VL_TYP):
             accmltd_chngs_fv_cr = self.ACCMLTD_CHNGS_FV
             fv = self.FV 
 
-        if (self.TYP_INSTRMNT_RL == '34'):	 		
+        if (self.INSTRMNT_RL_TYP == '34'):	 		
             gnrl_allwncs_bnk_rsk = self.GNRL_ALLWNCS_BNK_RSK
             gnrl_allwncs_crdt_rsk = self.GNRL_ALLWNCS_CRDT_RSK
 
